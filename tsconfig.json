@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true, // import * as React from 'react'를 import React from 'react' 처럼 불러올 수 있다. 
+        "sourceMap": true, // Error 가 발생했을 때 소스 코드를 확인할 수 있다. 
+        "lib": ["ES2020", "DOM"], // 의존하는 라이브러리 
+        "jsx": "react", //JSX는 리액트 말고도 쓰일 수 있다. 따라서 리액트라고 따로 지정해줘야함
+        "module" : "ESNext", // 최신 모듈을 쓰겠다는 것
+        "moduleResolution": "Node", // import export의 방식의 모듈시스템을 노드에서도 이용하게 해준다. 
+        "target": "ES5", //소스코드를 ES2020으로 작성하더라도 빌드는 ES5의 방식으로 함
+        "strict": true, //타입체크를 엄격하게 할때 true 로 설정
+        "resolveJsonModule": true, // json 파일을 import하는 것을 허용하겠다는 의미 ,
+        "baseUrl": ".",
+        "paths": {
+            // import ../../../../hello.js와 같은 문제를 @src/hello.js처럼 간단하게 할 수 있다. 
+            "@hooks/*" : ["hooks/*"],
+            "@components/*": ["components/*"],
+            "@layouts/*": ["layouts/*"],
+            "@pages/*": ["pages/*"],
+            "@utils/*": ["utils/*"],
+            "@typings/*": ["typings/*"]
+        }
+    }
+}
